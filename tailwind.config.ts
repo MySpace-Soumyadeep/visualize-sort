@@ -29,13 +29,38 @@ const config: Config = {
         },
     },
     keyframes:{
+      move1: {
+        '0%, 100%': { transform: 'translate(0, 0)' },
+        '50%': { transform: 'translate(100px, 100px)' },
+      },
+      move2: {
+        '0%, 100%': { transform: 'translate(0, 0)' },
+        '50%': { transform: 'translate(-100px, 100px)' },
+      },
+      move3: {
+        '0%, 100%': { transform: 'translate(0, 0)' },
+        '50%': { transform: 'translate(100px, -100px)' },
+      },
+      move4: {
+        '0%, 100%': { transform: 'translate(0, 0)' },
+        '50%': { transform: 'translate(-100px, -100px)' },
+      },
+      zoomIn: {
+        '0%, 100%': { transform: 'scale(0.8)' },
+        '50%': { transform: 'scale(1)' },
+      },
       gradient:{
         "0%": { backgroundPosition: "0% 50%"},
         "100%": { backgroundPosition: "100% 50%"}
       }
     },
     animation:{
-      gradient: "gradient 3s linear infinite"
+      gradient: "gradient 3s linear infinite",
+      move1: 'move1 5s infinite',
+      move2: 'move2 5s infinite',
+      move3: 'move3 5s infinite',
+      move4: 'move4 5s infinite',
+      zoomIn: 'zoomIn 6s infinite',
     }
     },
   },

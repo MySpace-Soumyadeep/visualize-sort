@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setArray } from '../app/reducers/array';
@@ -12,7 +13,6 @@ import { setCurrentCheckTwo, setCurrentSwappers } from '@/app/reducers/swappers'
 import { setCurrentBubbleTwo } from '@/app/reducers/bubbleSort';
 import { setCurrentSortedTwo } from '@/app/reducers/sorted';
 import { setCurrentSelectionTwo } from '@/app/reducers/selectionSort';
-// import { currentSelectionTwo } from '@/app/reducers/selectionSort';
 
 
 const Bar: React.FC = () => {
@@ -34,16 +34,16 @@ const Bar: React.FC = () => {
         currentSelectionTwo
 
     } = states
-    
-
-// console.log("currentSelectionTwo ", currentSelectionTwo);
-// console.log("currentChecker ", currentChecker);
-// console.log("currentSwappers ", currentSwappers);
-// console.log("currentSortedTwo ", currentSortedTwo);
 
 
-    const dispatch = useDispatch(); 
-    
+    // console.log("currentSelectionTwo ", currentSelectionTwo);
+    // console.log("currentChecker ", currentChecker);
+    // console.log("currentSwappers ", currentSwappers);
+    // console.log("currentSortedTwo ", currentSortedTwo);
+
+
+    const dispatch = useDispatch();
+
 
     const listOfSort = [
         "Selection Sort",
@@ -83,7 +83,7 @@ const Bar: React.FC = () => {
         else {
             cancelledRef.current = false;
             console.log("doing bubble sort");
-            
+
             doSort(algorithm, array, dispatch, currentSortedTwo, cancelledRef)
             // bubbleSort(array)
         }
@@ -93,7 +93,7 @@ const Bar: React.FC = () => {
         if (currentSwappers?.includes(index)) {
             //red
             return "rgba(219, 57, 57, 0.8)";
-        } else if (currentBubbleTwo?.includes(index) || currentSelectionTwo?.includes(index) ) {
+        } else if (currentBubbleTwo?.includes(index) || currentSelectionTwo?.includes(index)) {
             //green
             return "rgba(78, 216, 96, 0.8)";
         } else if (currentSortedTwo?.includes(index)) {
@@ -119,11 +119,14 @@ const Bar: React.FC = () => {
     const handleChooseAlgorithm = () => {
         setIsPopupOpen(true)
     }
-    
+
     return (
-        <div className='flex flex-row'>
+        <div className='flex flex-col sm:flex-row'>
             {/* <div className='flex flex-col w-52 p-2 border h-dvh'> */}
-            <div className='flex flex-col w-52 p-2 border-r-2 border-r-gray-700 h-dvh'>
+            <div className='flex flex-row sm:flex-col w-full sm:w-52 p-2 sm:border-r-2 border-r-gray-700 sm:h-dvh'>
+                {!isRunning && <Link type="button" className={`text-blue-500 text-center bg-gray-800 sm:text-red-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-2 sm:px-5 py-2.5 me-2 mb-2 dark:bg-black dark:hover:bg-blue-400 dark:hover:text-white dark:border-gray-700`}
+                    href="/"
+                >{`Go to Home`}</Link>}
                 {algorithm && <button type="button" className={`${isRunning ? "text-red-700" : "text-green-700"} bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-black ${isRunning ? "dark:hover:bg-red-700" : "dark:hover:bg-green-700"} dark:hover:text-white dark:border-gray-700`}
                     onClick={handleSort}
                 >{`${isRunning ? "Stop" : "Start"} Sorting`}</button>}
@@ -141,7 +144,7 @@ const Bar: React.FC = () => {
                 >Choose Algorithm</button>} */}
             </div>
 
-            <div className="p-4 flex flex-1 justify-center flex-col items-center ml-28">
+            <div className="p-4 flex flex-1 justify-center flex-col items-center sm:ml-28">
                 {/* <div className="relative w-4/6 md:w-3/4 h-60 max-w-4xl border border-gray-300 flex flex-wrap items-end justify-center overflow-x-auto"> */}
                 {/* <div className='text-transparent font-serif text-4xl mb-16 bg-gradient-to-r from-yellow-500 via-blue-700 to-green-600 bg-clip-text'> */}
                 <div className={`${isRunning ? "gradient-text text-transparent" : "text-blue-700"} font-serif text-4xl mb-16 ${true ? "animate-gradient" : ""}`}>
