@@ -31,3 +31,26 @@ body {
     text-wrap: balance;
   }
 }
+
+.gradient-text{
+  /* background: linear-gradient(
+    to right,
+    #a95ce8,
+    #eab308,
+    #ec4899,
+    #a95ce8,
+    #eab308,
+  ); */
+
+  background: linear-gradient(
+    to right,
+    #a95ce8,
+    #eab308,
+    #e01515,
+    #20a040,
+    #165ac0,
+    #eab308
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+}
