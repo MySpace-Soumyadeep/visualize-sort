@@ -147,7 +147,7 @@ const Bar: React.FC = () => {
             <div className="p-4 flex flex-1 justify-center flex-col items-center sm:ml-28">
                 {/* <div className="relative w-4/6 md:w-3/4 h-60 max-w-4xl border border-gray-300 flex flex-wrap items-end justify-center overflow-x-auto"> */}
                 {/* <div className='text-transparent font-serif text-4xl mb-16 bg-gradient-to-r from-yellow-500 via-blue-700 to-green-600 bg-clip-text'> */}
-                <div className={`${isRunning ? "gradient-text text-transparent" : "text-blue-700"} font-serif text-4xl mb-16 ${true ? "animate-gradient" : ""}`}>
+                <div className={`${isRunning ? "gradient-text text-transparent" : "text-slate-700"} font-serif text-4xl mb-16 ${true ? "animate-gradient" : ""}`}>
                     {algorithm || "Select Algorithm"}
                 </div>
                 <div id="bar-chart-container" className="relative w-4/6 md:w-3/4 h-60 max-w-4xl  flex flex-wrap items-end justify-center">
@@ -181,8 +181,8 @@ const Bar: React.FC = () => {
                         type="range"
                         id="numBars"
                         min="4"
-                        max="100"
-                        step="2"
+                        max="45"
+                        step="1"
                         disabled={isRunning}
                         value={numBars}
                         onChange={(e) => setNumBars(Number(e.target.value))}

@@ -1,6 +1,6 @@
 import { createAction, handleActions } from "redux-actions";
 
-const initialState = "Selection Sort";
+const initialState = "";
 
 const SET_ALGORITHM = "SET_ALGORITHM";
 export const setAlgorithm = createAction(SET_ALGORITHM);

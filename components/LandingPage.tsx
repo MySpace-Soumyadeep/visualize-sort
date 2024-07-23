@@ -27,7 +27,7 @@ const LandingPage: React.FC = () => {
                 <div className="text-center">
                     <h1 className="text-4xl sm:text-5xl font-bold text-white mb-8 animate-zoomIn">Welcome to the Sort Visualizer</h1>
                     <Link
-                        className="bg-blue-500 text-white py-3 px-6 rounded hover:bg-blue-700 transition-all duration-300"
+                        className="bg-black border border-blue-500 text-white font-bold py-3 px-6 rounded hover:bg-gray-900 transition-all duration-300 animate-pulse"
                         href="/playSort">
                         Start Sort Visualizer
                     </Link>

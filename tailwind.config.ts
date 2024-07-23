@@ -52,7 +52,13 @@ const config: Config = {
       gradient:{
         "0%": { backgroundPosition: "0% 50%"},
         "100%": { backgroundPosition: "100% 50%"}
-      }
+      },
+      pulse: {
+        '0%, 100%': { borderColor: '#3182ce' }, // Start and end with customBlue
+        '25%': { borderColor: '#38a169' }, // Change to customGreen at 25%
+        '50%': { borderColor: '#e53e3e', }, // Change to customRed at 50%
+        '75%': { borderColor: '#e6d520' }, // Change back to customYellow at 75%
+      },
     },
     animation:{
       gradient: "gradient 3s linear infinite",
@@ -61,9 +67,10 @@ const config: Config = {
       move3: 'move3 5s infinite',
       move4: 'move4 5s infinite',
       zoomIn: 'zoomIn 6s infinite',
+      pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
     }
-    },
   },
+},
   plugins: [],
 };
 export default config;

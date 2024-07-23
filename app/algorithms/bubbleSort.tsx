@@ -21,18 +21,18 @@ const bubbleSort = async (
         for (let j = 0; j < n - i - 1; j++) {
             if (cancelledRef.current) return;
             dispatch(setCurrentCheckTwo([j, j + 1]))
-            await sleep(1000);  // Add delay to visualize
+            await sleep(100);  // Add delay to visualize
             if (arr[j] > arr[j + 1]) {
                 dispatch(setCurrentSwappers([j, j + 1]));
-                await sleep(1000);  // Add delay to visualize
+                await sleep(100);  // Add delay to visualize
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // Swap elements
                 swapped = true;
                 dispatch(setArray([...arr]));
-                await sleep(1000);  // Add delay to visualize
+                await sleep(100);  // Add delay to visualize
             }
             dispatch(setCurrentSwappers([]))
             dispatch(setCurrentBubbleTwo([j, j + 1]))
-            await sleep(1000);  // Add delay to visualize
+            await sleep(100);  // Add delay to visualize
             dispatch(setCurrentBubbleTwo([]))
             dispatch(setCurrentSwappers([]))
             dispatch(setCurrentCheckTwo([]))
@@ -40,14 +40,14 @@ const bubbleSort = async (
         dispatch(setCurrentSortedTwo([...currentSortedTwo, n - i - 1]))
         if (!swapped) break;
     }
-    // if (!cancelledRef.current) {
-    //     dispatch(setCurrentBubbleTwo(Array.from({ length: n }, (_, i) => i)))
-    //     await sleep(100);
-    //     dispatch(setCurrentBubbleTwo([]))
-    //     dispatch(setCurrentSortedTwo(Array.from({ length: n }, (_, i) => i)))
-    //     await sleep(100);
-    //     dispatch(setRunning(false))
-    // }
+    if (!cancelledRef.current) {
+        dispatch(setCurrentBubbleTwo(Array.from({ length: n }, (_, i) => i)))
+        await sleep(100);
+        dispatch(setCurrentBubbleTwo([]))
+        dispatch(setCurrentSortedTwo(Array.from({ length: n }, (_, i) => i)))
+        await sleep(100);
+        dispatch(setRunning(false))
+    }
 
 }
 
