@@ -67,7 +67,7 @@ const config: Config = {
       move3: 'move3 5s infinite',
       move4: 'move4 5s infinite',
       zoomIn: 'zoomIn 6s infinite',
-      pulse: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      pulse: 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
     }
   },
 },
