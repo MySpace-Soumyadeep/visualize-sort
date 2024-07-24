@@ -121,7 +121,7 @@ const Bar: React.FC = () => {
     }
 
     return (
-        <div className='flex flex-col sm:flex-row'>
+        <div className='flex flex-col sm:flex-row mt-2 sm:mt-0'>
             {/* <div className='flex flex-col w-52 p-2 border h-dvh'> */}
             <div className='hidden sm:flex flex-row sm:flex-col w-full sm:w-52 p-2 sm:border-r-2 border-r-gray-700 sm:h-dvh'>
                 {!isRunning && <Link type="button" className={`text-blue-500 text-center bg-gray-800 sm:text-red-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-2 sm:px-5 py-2.5 me-2 mb-2 dark:bg-black dark:hover:bg-blue-400 dark:hover:text-white dark:border-gray-700`}
@@ -191,7 +191,7 @@ const Bar: React.FC = () => {
                 </div>}
             </div>
 
-            <div className='sm:hidden flex flex-row sm:flex-col w-full sm:w-52 p-6 sm:border-r-2 border-r-gray-700 sm:h-dvh justify-center ml-2'>
+            <div className='sm:hidden flex flex-row sm:flex-col w-full sm:w-52 p-6 sm:border-r-2 border-r-gray-700 sm:h-dvh justify-center ml-2 absolute bottom-0'>
                 {!isRunning && <Link type="button" className={`text-blue-500 text-center bg-gray-800 sm:text-red-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-2 sm:px-5 py-2.5 me-2 mb-2 dark:bg-black dark:hover:bg-blue-400 dark:hover:text-white dark:border-gray-700`}
                     href="/"
                 >{`Go to Home`}</Link>}
