@@ -17,7 +17,7 @@ import { setCurrentSelectionTwo } from '@/app/reducers/selectionSort';
 
 const Bar: React.FC = () => {
 
-    const [numBars, setNumBars] = useState<number>(5);
+    const [numBars, setNumBars] = useState<number>(10);
     const [isPopupOpen, setIsPopupOpen] = useState(false)
     const cancelledRef = useRef(false);
 
@@ -123,7 +123,7 @@ const Bar: React.FC = () => {
     return (
         <div className='flex flex-col sm:flex-row'>
             {/* <div className='flex flex-col w-52 p-2 border h-dvh'> */}
-            <div className='flex flex-row sm:flex-col w-full sm:w-52 p-2 sm:border-r-2 border-r-gray-700 sm:h-dvh'>
+            <div className='hidden sm:flex flex-row sm:flex-col w-full sm:w-52 p-2 sm:border-r-2 border-r-gray-700 sm:h-dvh'>
                 {!isRunning && <Link type="button" className={`text-blue-500 text-center bg-gray-800 sm:text-red-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-2 sm:px-5 py-2.5 me-2 mb-2 dark:bg-black dark:hover:bg-blue-400 dark:hover:text-white dark:border-gray-700`}
                     href="/"
                 >{`Go to Home`}</Link>}
@@ -189,6 +189,27 @@ const Bar: React.FC = () => {
                         className="w-2/3"
                     />
                 </div>}
+            </div>
+
+            <div className='sm:hidden flex flex-row sm:flex-col w-full sm:w-52 p-6 sm:border-r-2 border-r-gray-700 sm:h-dvh justify-center ml-2'>
+                {!isRunning && <Link type="button" className={`text-blue-500 text-center bg-gray-800 sm:text-red-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-2 sm:px-5 py-2.5 me-2 mb-2 dark:bg-black dark:hover:bg-blue-400 dark:hover:text-white dark:border-gray-700`}
+                    href="/"
+                >{`Go to Home`}</Link>}
+                {algorithm && <button type="button" className={`${isRunning ? "text-red-700" : "text-green-700"} bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-black ${isRunning ? "dark:hover:bg-red-700" : "dark:hover:bg-green-700"} dark:hover:text-white dark:border-gray-700 text-center`}
+                    onClick={handleSort}
+                >{`${isRunning ? "Stop" : "Start"} Sorting`}</button>}
+
+                {!isRunning && <button type="button" className={`text-gray-500 bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-black "dark:hover:bg-gray-700" dark:hover:text-white dark:border-gray-700`}
+                    onClick={generateNewArray}
+                >New Array</button>}
+
+                {!isRunning && <button type="button" className={`text-gray-500 bg-gray-800 hover:bg-gray-900 focus:outline-none font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-black "dark:hover:bg-gray-700" dark:hover:text-white dark:border-gray-700`}
+                    onClick={handleChooseAlgorithm}
+                >Choose Algorithm</button>}
+
+                {/* {!isRunning && <button type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                    onClick={handleChooseAlgorithm}
+                >Choose Algorithm</button>} */}
             </div>
 
             {isPopupOpen && (

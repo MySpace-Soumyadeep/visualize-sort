@@ -14,7 +14,7 @@ const Popup: React.FC<PopupProps> = ({ message, onClose, onOk, selectedOption })
     
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-mygray-100 p-6 rounded-lg shadow-lg relative w-96">
+            <div className="bg-mygray-100 p-6 rounded-lg shadow-lg relative sm:w-96 w-80">
                 <div className="flex justify-between mb-5">
                     <span className="flex font-bold "> SELECT ALGORITHM</span>
                 <button
